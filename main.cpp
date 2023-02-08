@@ -333,8 +333,9 @@ void play_game() {
             if (stock_bbox.collision(mouse_x, mouse_y)) {
                 // remove existing taken cards as long as there are still cards
                 // in the stock or stock history
-                if (!(stock.empty() && stock_history.empty()))
-                taken.clear();
+                if (!(stock.empty() && stock_history.empty())) {
+                    taken.clear();
+                }
 
                 if (stock.empty()) {
                     // if the stock is empty, reset it
