@@ -754,7 +754,8 @@ void play_game() {
         }
     }
 
-    // after the game has been won, display the "You won!" text until
+    // after the game has been won, display the "You won!" text until the game
+    // is closed
     // (being in a separate mainloop means all game logic is disabled and the
     // screen will no longer refresh)
     if (won) {
