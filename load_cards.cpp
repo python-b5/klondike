@@ -1,7 +1,7 @@
 /* klondike/load_cards.cpp
  * by python-b5
  *
- * Part of main.cpp. Loads the card images as wrapper::Sprite objects.
+ * Loads the card images as wrapper::Sprite objects.
  */
 
 cards[0] = wrapper::Sprite("assets/cards/ace_clubs.bmp");
