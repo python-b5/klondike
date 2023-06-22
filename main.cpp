@@ -560,35 +560,36 @@ void play_game() {
                     Suit dragged_suit = dragged_cards[0].card.suit;
 
                     if (
-                        tableau[closest].cards.back().face_up && (
-                            // only kings can be at the bottom of a stack
-                            (
-                                tableau[closest].cards.empty()
-                                && dragged_cards[0].card.index == 12
-                            )
-
-                            // card must be one less and the opposite color than
-                            // the one below it in the stack
-                            || (
+                        // only kings can be at the bottom of a stack
+                        (
+                            tableau[closest].cards.empty()
+                            && dragged_cards[0].card.index == 12
+                        ) || (
+                            tableau[closest].cards.back().face_up && (
+                                // card must be one less and the opposite color
+                                // than the one below it in the stack
                                 (
-                                    dragged_cards[0].card.index + 1
-                                    == tableau[closest].cards.back().card.index
-                                ) && (
                                     (
+                                        dragged_cards[0].card.index + 1
+                                        == tableau[closest].cards.back().card
+                                           .index
+                                    ) && (
                                         (
-                                            dragged_suit == DIAMONDS
-                                            || dragged_suit == HEARTS
-                                        ) && (
-                                            tableau_suit == CLUBS
-                                            || tableau_suit == SPADES
-                                        )
-                                    ) || (
-                                        (
-                                            dragged_suit == CLUBS
-                                            || dragged_suit == SPADES
-                                        ) && (
-                                            tableau_suit == DIAMONDS
-                                            || tableau_suit == HEARTS
+                                            (
+                                                dragged_suit == DIAMONDS
+                                                || dragged_suit == HEARTS
+                                            ) && (
+                                                tableau_suit == CLUBS
+                                                || tableau_suit == SPADES
+                                            )
+                                        ) || (
+                                            (
+                                                dragged_suit == CLUBS
+                                                || dragged_suit == SPADES
+                                            ) && (
+                                                tableau_suit == DIAMONDS
+                                                || tableau_suit == HEARTS
+                                            )
                                         )
                                     )
                                 )
